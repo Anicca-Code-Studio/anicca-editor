@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anicca Editor Test</title>
+  <style>
+    body { font-family: "Segoe UI", Roboto, Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; background: #f8f9fa; }
+    #editor { margin-bottom: 20px; }
+    #output { background: #fff; padding: 12px; white-space: pre-wrap; font-family: monospace; font-size: 13px; border: 1px solid #e0e0e0; border-radius: 8px; }
+    label { font-weight: 600; display: block; margin-bottom: 6px; color: #444746; }
+  </style>
+</head>
+<body>
+  <h2>Anicca Editor</h2>
+  <div id="editor"></div>
+  <label>HTML Output:</label>
+  <pre id="output"></pre>
+
+  <script type="module">
+    import { Editor, BoldPlugin, ItalicPlugin, UnderlinePlugin, StrikethroughPlugin,
+             HeadingPlugin, CodePlugin, CodeBlockPlugin, BlockQuotePlugin,
+             ListPlugin, LinkPlugin, HistoryPlugin, TablePlugin,
+             InputRulesPlugin, ImagePlugin, FindReplacePlugin,
+             SuperscriptPlugin, SubscriptPlugin, TextColorPlugin, BackgroundColorPlugin,
+             FontSizePlugin, FontFamilyPlugin, AlignPlugin, MediaEmbedPlugin } from '../dist/index.js';
+
+    const editor = new Editor({
+      attachTo: document.getElementById('editor'),
+      // Ordered so toolbar groups read left to right like Docs.
+      plugins: [
+        HistoryPlugin,
+        FontFamilyPlugin,
+        FontSizePlugin,
+        BoldPlugin,
+        ItalicPlugin,
+        UnderlinePlugin,
+        StrikethroughPlugin,
+        CodePlugin,
+        SuperscriptPlugin,
+        SubscriptPlugin,
+        TextColorPlugin,
+        BackgroundColorPlugin,
+        HeadingPlugin,
+        BlockQuotePlugin,
+        CodeBlockPlugin,
+        ListPlugin,
+        AlignPlugin,
+        LinkPlugin,
+        ImagePlugin,
+        MediaEmbedPlugin,
+        TablePlugin,
+        InputRulesPlugin,
+        FindReplacePlugin,
+      ],
+      data: '<p>Hello <strong>Anicca Editor</strong>! Start typing...</p>'
+          + '<ul><li>Fruit<ul><li>Apple</li><li>Banana</li></ul></li><li>Vegetable</li></ul>',
+    });
+    window.__editor = editor;
+
+    editor.on('change', () => {
+      document.getElementById('output').textContent = editor.getData();
+    });
+  </script>
+</body>
+</html>
