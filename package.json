@@ -5,6 +5,14 @@
   "type": "module",
   "license": "MIT",
   "author": "alhaf <ajiwahyu.sekawanmedia@gmail.com>",
+  "homepage": "https://anicca-editor-website.pages.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anicca-Code-Studio/anicca-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Anicca-Code-Studio/anicca-editor/issues"
+  },
   "keywords": [
     "rich-text-editor",
     "wysiwyg",

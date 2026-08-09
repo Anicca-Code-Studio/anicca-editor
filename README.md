@@ -207,6 +207,12 @@ The editor runs in a browser, since it needs a DOM. Node is used only for buildi
 Pure functions such as `serialize`, `diffDoc`, `transform`, and `applyChange` also run in Node
 without a DOM.
 
+## Links
+
+- Website and live demo: https://anicca-editor-website.pages.dev
+- Source: https://github.com/Anicca-Code-Studio/anicca-editor
+- npm: https://www.npmjs.com/package/anicca-editor
+
 ## License
 
 MIT. See the `LICENSE` file.
